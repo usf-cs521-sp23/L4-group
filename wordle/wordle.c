@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 int main(int argc, char *argv[]) {
   char* play = "y";
@@ -9,13 +10,18 @@ int main(int argc, char *argv[]) {
     FILE* fptr;
     fptr = fopen("wordleWords.txt", "r");
     int r = rand() % 26;
-    char *target = (char*) malloc(5 * sizeof(char));
-    while(fgets(target, 5, fptr) && r > 0){
-      r--;
-    }
+    char target[5] = "email";
+    if(fptr == NULL) {
+      perror("Error opening file");
+      return(-1);
+   }
+    // while(fgets(target, 5, fptr) != NULL && r > 0){
+    //   r--;
+    // }
     fclose(fptr);
+    printf("The target word: %s\n", target);
 
-    printf("Tell me your name so that I can laugh at you :)=: ");
+    printf("Tell me your name so that I can laugh at you :): ");
     char* name = (char*) malloc(20 * sizeof(char));
     scanf("%s", name);
 
@@ -33,11 +39,16 @@ int main(int argc, char *argv[]) {
       }
 
       for(int i = 0; i < 5; i++){
-        if(target[i] < 'a' || target[i] > 'z'){
+        if(guess[i] < 'a' || guess[i] > 'z'){
           printf("What are you trying to enter %s? Please at least give me a word, okay?", name);
+          break;
         }
       }
-      
+
+      bool track[26];
+      for(int i = 0; i < 26; i++){
+        track[i] = true;
+      }
       printf("                  ");
       for (int j = 0; j < 5; ++j) {
         if (target[j] == guess[j]) {
@@ -45,6 +56,7 @@ int main(int argc, char *argv[]) {
         } else if (strchr(target, guess[j]) != NULL) {
             printf("a");
         } else {
+            track[guess[j] - 'a'] = false;
             printf("x");
         }
       }
@@ -55,7 +67,15 @@ int main(int argc, char *argv[]) {
         win = 1;
         break;
       }
-      printf("%d times left", 5 - i);
+
+      printf("The wrong letters: ");
+      for(int i = 0; i < 26; i++){
+        if(track[i] == false){
+          printf("%c ", i + 'a');
+        }
+      }
+
+      printf("\n%d times left\n", 5 - i);
       free(guess);
     }
     if(win == 0){
