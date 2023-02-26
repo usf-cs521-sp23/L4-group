@@ -1,24 +1,29 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "./words/words.c"
 
 int main(int argc, char *argv[]) {
+  srand(time(NULL));
   char* play = "y";
-  while(strcmp(play, "y") == 0){
-    FILE* fptr;
-    fptr = fopen("wordleWords.txt", "r");
-    int r = rand() % 26;
-    char target[5] = "email";
-    if(fptr == NULL) {
-      perror("Error opening file");
-      return(-1);
-   }
+  while(
+    strcmp(play, "y") == 0){
+  //   FILE* fptr;
+  //   fptr = fopen("wordleWords.txt", "r");
+  //   int r = rand() % 26;
+  //   char target[5] = "email";
+  //   if(fptr == NULL) {
+  //     perror("Error opening file");
+  //     return(-1);
+  //  }
     // while(fgets(target, 5, fptr) != NULL && r > 0){
     //   r--;
     // }
-    fclose(fptr);
+    // fclose(fptr);
+    char target[6];
+    target[0] = 0;
+    getWord(target);
     printf("The target word: %s\n", target);
 
     printf("Tell me your name so that I can laugh at you :): ");
