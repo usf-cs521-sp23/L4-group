@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
   srand(time(NULL));
-  char* play = "y";
+  char play[1] = "y";
   while(
     strcmp(play, "y") == 0){
   //   FILE* fptr;
