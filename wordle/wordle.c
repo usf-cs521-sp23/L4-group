@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
       puts("");
 
       if (strncmp(target, guess, 5) == 0) {
-        printf("YOU WINNNNNNNNNNNNN!!!\n");
+        printf("%s, YOU WINNNNNNNNNNNNN!!!\n", name);
         win = 1;
         break;
       }
