@@ -24,10 +24,9 @@ char* toLower(char* s) {
     return s;
 }
 
-int getWord(char *randword) {
+int getWord(char *randword, int wordLength) {
     /* Open words file */
     FILE *fp = fopen("/usr/share/dict/words", "r");
-
     if (fp == NULL) {
         perror("Unable to locate word list");
         exit(EXIT_FAILURE);
@@ -50,7 +49,7 @@ int getWord(char *randword) {
             }
         }
 
-        if (strlen(word) == 6 && validChar(word) == 0) {
+        if (strlen(word) == wordLength + 1 && validChar(word) == 0) {
             strcpy(randword, word);
             toLower(randword);
             break;

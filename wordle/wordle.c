@@ -21,29 +21,34 @@ int main(int argc, char *argv[]) {
     //   r--;
     // }
     // fclose(fptr);
-    char target[6];
-    target[0] = 0;
-    getWord(target);
-    printf("The target word: %s\n", target);
-
     printf("Tell me your name so that I can laugh at you :): ");
     char* name = (char*) malloc(20 * sizeof(char));
     scanf("%s", name);
 
+    printf("Now choose the length of the word, you will take on!: ");
+    int wordLength;
+    scanf("%d", &wordLength);
+
+    char target[wordLength];
+    target[0] = 0;
+    getWord(target, wordLength);
+
+    printf("The target word: %s\n", target);
+
     int win = 0;
 
     for (int i = 0; i < 6; ++i) {
-      char* guess = (char*) malloc(5 * sizeof(char));
+      char* guess = (char*) malloc(wordLength * sizeof(char));
       printf("Enter your guess: ");
       scanf("%s", guess);
 
-      if (strlen(guess) != 5) {
-        printf("That is not 5 characters %s. Please learn to play the game "
-              "correctly.\n", name);
+      if (strlen(guess) != wordLength) {
+        printf("That is not %d characters %s. Please learn to play the game "
+              "correctly.\n", wordLength, name);
         continue;
       }
 
-      for(int i = 0; i < 5; i++){
+      for(int i = 0; i < wordLength; i++){
         if(guess[i] < 'a' || guess[i] > 'z'){
           printf("What are you trying to enter %s? Please at least give me a word, okay?", name);
           break;
@@ -55,7 +60,7 @@ int main(int argc, char *argv[]) {
         track[i] = true;
       }
       printf("                  ");
-      for (int j = 0; j < 5; ++j) {
+      for (int j = 0; j < wordLength; ++j) {
         if (target[j] == guess[j]) {
             printf("o");
         } else if (strchr(target, guess[j]) != NULL) {
@@ -67,7 +72,7 @@ int main(int argc, char *argv[]) {
       }
       puts("");
 
-      if (strncmp(target, guess, 5) == 0) {
+      if (strncmp(target, guess, wordLength) == 0) {
         printf("%s, YOU WINNNNNNNNNNNNN!!!\n", name);
         win = 1;
         break;
