@@ -1,0 +1,8 @@
+Name	 Wins
+punnam	 1
+marcus	 1
+Name	 Wins
+punnam	 1
+seth	 1
+Name	 Wins
+seth	 1

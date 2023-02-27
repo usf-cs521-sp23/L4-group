@@ -1,0 +1,59 @@
+Player Name: punnam
+Word Length: 3
+Target word: hwy
+Guesses made: hwy
+Number of wins: 1
+Number of losses: 0
+
+Player Name: marcus
+Word Length: 3
+Target word: zit
+Guesses made: zik
+Guesses made: zit
+Number of wins: 2
+Number of losses: 0
+
+Winners:
+
+punnam: 1 wins
+marcus: 1 wins
+Player Name: punnam
+Word Length: 3
+Target word: toy
+Guesses made: toy
+Number of wins: 1
+Number of losses: 0
+
+Player Name: seth
+Word Length: 4
+Target word: fwiw
+Guesses made: fwiw
+Number of wins: 2
+Number of losses: 0
+
+Winners:
+
+punnam: 1 wins
+seth: 1 wins
+Player Name: seth
+Word Length: 3
+Target word: vhf
+Guesses made: vhf
+Number of wins: 1
+Number of losses: 0
+
+Player Name: marcus
+Word Length: 2
+Target word: bx
+Guesses made: ll
+Guesses made: ll
+Guesses made: ll
+Guesses made: ll
+Guesses made: ll
+Guesses made: ll
+Number of wins: 1
+Number of losses: 1
+
+Winners:
+
+seth: 1 wins

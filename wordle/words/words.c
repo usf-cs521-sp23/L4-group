@@ -62,3 +62,4 @@ int getWord(char *randword, int wordLength) {
 
     return 0;
 }
+ 
