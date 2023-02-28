@@ -57,3 +57,13 @@ Number of losses: 1
 Winners:
 
 seth: 1 wins
+Player Name: test
+Word Length: 6
+Target word: spines
+Guesses made: spines
+Number of wins: 1
+Number of losses: 0
+
+Winners:
+
+test: 1 wins
