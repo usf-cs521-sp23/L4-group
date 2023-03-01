@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
     target[0] = 0;
     getWord(target, wordLength);
 
-    // printf("The target word: %s\n", target);
+    printf("The target word: %s\n", target);
     fprintf(results_file, "Target word: %s", target);
 
     int win = 0;
